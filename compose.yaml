@@ -1,0 +1,8 @@
+services:
+  questdb:
+    image: questdb/questdb
+    restart: always
+
+  grafana:
+    image: grafana/grafana-oss
+    restart: always

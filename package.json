@@ -1,0 +1,18 @@
+{
+  "name": "intel-gpu-monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "index.js",
+  "engines": {
+    "node": ">=20.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^13.0.0"
+  }
+}
