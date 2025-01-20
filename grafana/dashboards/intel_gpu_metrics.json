@@ -80,7 +80,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 14,
+        "h": 6,
         "w": 12,
         "x": 0,
         "y": 0
@@ -234,7 +234,7 @@
         ]
       },
       "gridPos": {
-        "h": 14,
+        "h": 6,
         "w": 12,
         "x": 12,
         "y": 0
@@ -244,7 +244,7 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom",
+          "placement": "right",
           "showLegend": true
         },
         "tooltip": {
@@ -320,10 +320,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 18,
+        "h": 6,
         "w": 6,
         "x": 0,
-        "y": 14
+        "y": 6
       },
       "id": 1,
       "options": {
@@ -423,10 +423,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 18,
+        "h": 6,
         "w": 6,
         "x": 6,
-        "y": 14
+        "y": 6
       },
       "id": 4,
       "options": {
@@ -515,10 +515,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 18,
+        "h": 6,
         "w": 6,
         "x": 12,
-        "y": 14
+        "y": 6
       },
       "id": 5,
       "options": {
@@ -609,10 +609,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 18,
+        "h": 6,
         "w": 6,
         "x": 18,
-        "y": 14
+        "y": 6
       },
       "id": 6,
       "options": {
@@ -636,7 +636,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT\r\n  timestamp AS \"time\",\r\n  'GPU ' || deviceid::int as device,\r\n  greatest(\r\n    render_3d_engine_utilization_pct::int,\r\n    blitter_engine_utilization_pct::int,\r\n    compute_engine_utilization_pct::int,\r\n    video_engine_utilization_pct::int,\r\n    video_enhance_engine_utilization_pct::int\r\n  ) as ' '\r\n  \r\nfrom gpu_metrics",
+          "rawSql": "SELECT\r\n  timestamp AS \"time\",\r\n  'GPU ' || deviceid::int as device,\r\n  greatest(\r\n    render_3d_engine_utilization_pct::int,\r\n    blitter_engine_utilization_pct::int,\r\n    compute_engine_utilization_pct::int,\r\n    video_engine_utilization_pct::int,\r\n    video_enhance_engine_utilization_pct::int\r\n  ) as ' '\r\n  \r\nfrom gpu_metrics\r\norder by device",
           "refId": "A",
           "sql": {
             "columns": [
@@ -665,7 +665,7 @@
             "fields": [
               "device"
             ],
-            "keepFields": false
+            "keepFields": true
           }
         }
       ],
@@ -699,7 +699,7 @@
   },
   "timezone": "browser",
   "title": "Intel Gpu Metrics",
-  "uid": "beaimwcw64sn4c",
-  "version": 7,
+  "uid": "gpu_metrics",
+  "version": 2,
   "weekStart": ""
 }
