@@ -8,8 +8,6 @@ services:
     command: ["stream"]
     # required for gpu access
     privileged: true
-    environment:
-      DB_HOST: questdb:9000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - .:/app
@@ -19,7 +17,6 @@ services:
     restart: always
     ports:
       - "13512:8812"
-      - "13513:9000"
     volumes:
       - intel-gpu-data:/root/.questdb/db
 
@@ -31,7 +28,5 @@ services:
     ports:
       - "13511:3000"
     volumes:
-      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
       - intel-gpu-grafana:/var/lib/grafana
-      - ./grafana/provisioning:/etc/grafana/provisioning
-      - ./grafana/dashboards:/var/lib/grafana/dashboards
+      - ./grafana/:/etc/grafana/provisioning/

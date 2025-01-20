@@ -1,0 +1,18 @@
+# config file version
+apiVersion: 1
+
+datasources:
+  - name: QuestDB
+    uid: questdb
+    type: postgres
+    access: direct
+    url: questdb:8812
+    user: admin
+    database: qdb
+    isDefault: true
+    version: 1
+    editable: true
+    secureJsonData:
+      password: quest
+    jsonData:
+      sslmode: disable
